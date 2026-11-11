@@ -31,6 +31,13 @@ targets: [
 
 In Xcode: File -> Add Package Dependencies, then paste `https://github.com/TekservixHQ/smsgora-swift`.
 
+
+## CocoaPods
+
+```ruby
+pod 'SmsGora', '~> 1.0'
+```
+
 ## Quick start
 
 Create an API key in the SMS Gora dashboard (SMS Gora -> API keys) and keep it on your server.

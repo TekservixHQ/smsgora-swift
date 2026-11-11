@@ -41,7 +41,7 @@ public struct BulkMessage {
 ///
 /// Keep the key on your server. Never ship it inside an iOS or macOS app.
 public final class SmsGoraClient {
-    public static let version = "1.0.0"
+    public static let version = "1.0.1"
     public static let defaultBaseURL = "https://tekservix.com/smsgora/api/v1"
 
     public let baseURL: String
