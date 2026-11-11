@@ -4,6 +4,8 @@
 [![Swift versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FTekservixHQ%2Fsmsgora-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/TekservixHQ/smsgora-swift)
 [![Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FTekservixHQ%2Fsmsgora-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/TekservixHQ/smsgora-swift)
 
+**SMS Gora SMS Gateway** - official Swift client: send and receive SMS through your own Android phones. By Tekservix.
+
 Swift client for the [SMS Gora SMS Gateway](https://tekservix.com/smsgora/) API.
 
 SMS Gora turns Android phones with ordinary SIM cards into an SMS gateway. Your server calls the API, a linked phone sends the text, and replies and delivery reports come back to you. There's no sender ID registration and no per-message fee from us: your mobile operator bills the texts like any SMS.
