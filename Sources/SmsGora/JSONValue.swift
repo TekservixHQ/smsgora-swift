@@ -4,7 +4,7 @@ import Foundation
 ///
 ///     let result = try await sms.sendSMS(to: "+15551234567", message: "Hi")
 ///     result["message_ids"]?[0]?.intValue // 1873
-public enum JSONValue: Codable, Equatable, Hashable, CustomStringConvertible {
+public enum JSONValue: Codable, Equatable, Hashable, CustomStringConvertible, Sendable {
     case null
     case bool(Bool)
     case number(Double)
