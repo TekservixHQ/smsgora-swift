@@ -11,7 +11,8 @@
     NSData *body = [@"{\"event\":\"sms.received\"}" dataUsingEncoding:NSUTF8StringEncoding];
     NSString *good = @"sha256=313fe9b54923f49c8b94d50c5b96fa44f3f5a7ca90ef52fd55afb2bfd3ae8f60";
     XCTAssertTrue([TSXSmsGoraClient verifyWebhookBody:body signature:good secret:@"whsec_test"]);
-    XCTAssertTrue([TSXSmsGoraClient verifyWebhookBody:body signature:[NSString stringWithFormat:@" %@\n", good] secret:@"whsec_test"]);
+    NSString *padded = [NSString stringWithFormat:@" %@\n", good];
+    XCTAssertTrue([TSXSmsGoraClient verifyWebhookBody:body signature:padded secret:@"whsec_test"]);
     XCTAssertFalse([TSXSmsGoraClient verifyWebhookBody:body signature:good secret:@"other"]);
     XCTAssertFalse([TSXSmsGoraClient verifyWebhookBody:body signature:@"" secret:@"whsec_test"]);
     XCTAssertFalse([TSXSmsGoraClient verifyWebhookBody:body signature:nil secret:@"whsec_test"]);
