@@ -38,6 +38,29 @@ In Xcode: File -> Add Package Dependencies, then paste `https://github.com/Tekse
 pod 'SmsGora', '~> 1.0'
 ```
 
+## Objective-C
+
+For Objective-C apps there is a separate pod with the same features, built on Foundation only:
+
+```ruby
+pod 'SmsGoraObjC', '~> 1.0'
+```
+
+```objc
+#import <SmsGoraObjC/SmsGoraObjC.h>
+
+TSXSmsGoraClient *client = [[TSXSmsGoraClient alloc] initWithAPIKey:@"sgk_your_key"];
+[client sendSMSTo:@[@"+250788123456"]
+          message:@"Your order #1042 has shipped."
+       completion:^(id data, NSError *error) {
+    if (error) NSLog(@"Failed: %@", error.localizedDescription);   // error.code = HTTP status
+    else NSLog(@"Queued: %@", data);
+}];
+
+// Webhooks: check X-SmsGora-Signature
+BOOL valid = [TSXSmsGoraClient verifyWebhookBody:rawBody signature:signatureHeader secret:@"whsec_..."];
+```
+
 ## Quick start
 
 Create an API key in the SMS Gora dashboard (SMS Gora -> API keys) and keep it on your server.
